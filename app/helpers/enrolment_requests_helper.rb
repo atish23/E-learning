@@ -1,0 +1,2 @@
+module EnrolmentRequestsHelper
+end

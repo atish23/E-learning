@@ -1,0 +1,27 @@
+<%= form_with(model: [:admin, school_admin], local: true, class: "form") do |form| %>
+  <% if school_admin.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(school_admin.errors.count, "error") %> prohibited this school_admin from being saved:</h2>
+
+      <ul>
+        <% school_admin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.by_role(Role::SCHOOL_ADMIN), :id, ->(user) { "#{user.name} (#{user.email})" }, {}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :school_id %>
+    <%= form.collection_select :school_id, School.all, :id, :name, {}, { class: "form-control" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

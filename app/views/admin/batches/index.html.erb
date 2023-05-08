@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Batches</h1>
+
+      <table class="table">
+        <thead class="thead">
+          <tr>
+            <th scope='col'>Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">Start date</th>
+            <th scope="col">End date</th>
+            <th scope="col">Capacity</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @batches.each do |batch| %>
+            <tr>
+              <td><%= batch.name %></td> 
+              <td><%= batch.course.name %></td>
+              <td><%= batch.start_date %></td>
+              <td><%= batch.end_date %></td>
+              <td><%= batch.capacity %></td>
+              <td><%= link_to 'Show', admin_batch_path(batch), class: "btn btn-primary btn-sm" %></td>
+              <td><%= link_to 'Edit', edit_admin_batch_path(batch), class: "btn btn-warning btn-sm" %></td>
+              <td><%= link_to 'Destroy', ([:admin,batch]), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <%= link_to 'New Batch', new_admin_batch_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>

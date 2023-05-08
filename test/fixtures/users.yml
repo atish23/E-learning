@@ -1,0 +1,14 @@
+one:
+  name: Admin
+  email: user1@example.com
+  role: one
+
+two:
+  name: SchoolAdmin
+  email: user2@example.com
+  role: two
+
+three:
+  name: Student
+  email: user3@example.com
+  role: three

@@ -1,0 +1,28 @@
+<h1>Your Batches</h1>
+
+<% if @batches.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Batch Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @batches.each do |batch| %>
+        <tr>
+          <td><%= batch.name %></td>
+          <td><%= batch.start_date.strftime('%d-%m-%Y') %></td>
+          <td><%= batch.end_date.strftime('%d-%m-%Y') %></td>
+          <td>
+            <%= link_to 'Show My ClassMates', show_users_batch_path(batch), class: 'btn btn-primary' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>You are not enrolled in any batches.</p>
+<% end %>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-4">
+        <div class="card-body">
+          <p id="notice" class="alert alert-success"><%= notice %></p>
+
+          <p class="card-text">
+            <strong>Name:</strong>
+            <%= @school.name %>
+          </p>
+
+          <p class="card-text">
+            <strong>Address:</strong>
+            <%= @school.address %>
+          </p>
+
+          <p class="card-text">
+            <strong>Contact details:</strong>
+            <%= @school.contact_details %>
+          </p>
+
+          <div class="d-flex justify-content-between mt-4">
+            <%= link_to 'Edit', edit_admin_school_path(@school), class: "btn btn-primary" %>
+            <%= link_to 'Back', admin_schools_path, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

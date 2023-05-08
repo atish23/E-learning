@@ -1,0 +1,39 @@
+<%= form_with(model: [:admin, enrolment_request], local: true) do |form| %>
+  <% if enrolment_request.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4><%= pluralize(enrolment_request.errors.count, "error") %> prohibited this enrolment_request from being saved:</h4>
+
+      <ul>
+        <% enrolment_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :batch_id %>
+    <% if current_user.schooladmin? %>
+      <%= form.collection_select :batch_id, Batch.joins(:course => :school)
+        .where(:schools => {:id => current_user.schools.pluck(:id)}), :id, :name, {}, class: "form-control" %>
+    <% else %>
+      <%= form.collection_select :batch_id, Batch.all, :id, :name, {}, class: "form-control" %>
+    <% end %>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :student_id %>
+    <%= form.collection_select :student_id, User.all, :id, ->(user) { "#{user.name} (#{user.email})" }, {}, class: "form-control" %>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= form.select :status, EnrolmentRequest.statuses.keys.to_a, {}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

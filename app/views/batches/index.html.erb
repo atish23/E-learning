@@ -1,0 +1,34 @@
+<div class="container">
+  <% if flash[:success] %>
+    <div class="alert alert-success">
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+
+  <% if flash[:error] %>
+    <div class="alert alert-danger">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
+  <h1>List Of Available Batches</h1>
+  <% @batches.each do |batch| %>
+    <div class="card my-3">
+      <div class="card-header">
+        <h5><%= batch.name %></h5>
+      </div>
+      <div class="card-body">
+        <p><strong>Start Date:</strong> <%= batch.start_date.strftime('%B %d, %Y') %></p>
+        <p><strong>End Date:</strong> <%= batch.end_date.strftime('%B %d, %Y') %></p>
+        <p><strong>Course:</strong> <%= batch.course.name %></p>
+        <p><strong>Course description:</strong> <%= batch.course.description %></p>
+        <p><strong>Course Duration:</strong> <%= batch.course.duration %></p>
+      </div>
+      <% if user_signed_in? %>
+      <div class="card-footer">
+        <%= button_to "Enroll", enrolments_path(batch_id: batch.id, user_id: current_user.id), method: :post, class: "btn btn-primary" %>
+      </div>
+      <%end%>
+    </div>
+  <% end %>
+</div>

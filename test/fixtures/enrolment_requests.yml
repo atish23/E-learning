@@ -1,0 +1,9 @@
+enrolment_request_pending:
+  batch: one
+  student: one
+  status: pending
+
+enrolment_request_approved:
+  batch: two
+  student: two
+  status: approved

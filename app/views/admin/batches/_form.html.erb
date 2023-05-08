@@ -1,0 +1,45 @@
+<%= form_with(model: [:admin, batch], local: true) do |form| %>
+  <% if batch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(batch.errors.count, "error") %> prohibited this batch from being saved:</h2>
+
+      <ul>
+        <% batch.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <% if current_user.schooladmin? %>
+      <%= form.collection_select :course_id, Course.joins(:school).where(schools: { id: current_user.schools.pluck(:id) }), :id,:name %>
+    <% else %>
+      <%= form.collection_select :course_id, Course.all, :id, :name, {}, class: "form-control" %>
+    <% end %>     
+  </div>
+  
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :capacity %>
+    <%= form.number_field :capacity %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

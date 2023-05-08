@@ -1,0 +1,8 @@
+one:
+  name: Admin
+
+two:
+  name: SchoolAdmin
+
+three:
+  name: Student
