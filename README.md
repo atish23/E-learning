@@ -54,4 +54,12 @@ Improvements To be Done:
     Implement pagination for displaying large data sets.
     Improve UI/UX for better user experience.
     Add all tests case for better code quality and reliability.
-    
+
+Screenshots
+        <img width="1201" alt="Screenshot 2023-05-09 at 2 28 19 AM" src="https://user-images.githubusercontent.com/16266389/236934902-142e1fc2-f8aa-4b2d-84b2-385b8341cf3e.png">
+<img width="1220" alt="Screenshot 2023-05-09 at 2 28 29 AM" src="https://user-images.githubusercontent.com/16266389/236934929-d882fab7-c1b6-4bfd-9c87-792a198b9287.png">
+<img width="1229" alt="Screenshot 2023-05-09 at 2 28 40 AM" src="https://user-images.githubusercontent.com/16266389/236934931-852a2959-f8b0-43e0-aee7-558f653b5e11.png">
+<img width="1129" alt="Screenshot 2023-05-09 at 2 29 16 AM" src="https://user-images.githubusercontent.com/16266389/236934940-e5b1d51e-9739-4be2-bccb-1379f11dc76b.png">
+<img width="1250" alt="Screenshot 2023-05-09 at 2 29 45 AM" src="https://user-images.githubusercontent.com/16266389/236934948-d76790b4-9caa-48cf-b18c-0f66b93cb5d5.png">
+<img width="1191" alt="Screenshot 2023-05-09 at 2 29 51 AM" src="https://user-images.githubusercontent.com/16266389/236934951-fefdcafa-e780-4ed0-9557-baf7e6ed8994.png">
+<img width="1659" alt="Screenshot 2023-05-09 at 2 32 27 AM" src="https://user-images.githubusercontent.com/16266389/236934955-2281bd3c-0ded-4ee0-9ecf-0caa4ed11180.png">
