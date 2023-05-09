@@ -1,4 +1,8 @@
-Educational Management System
+**Educational Management System
+**
+
+<img width="824" alt="Screenshot 2023-05-09 at 6 01 18 PM" src="https://github.com/atish23/E-learning/assets/16266389/38866c6f-bcb1-47c5-88fc-68eda0884a18">
+
 
 This is an Educational Management System application that allows for the creation and management of schools, courses, batches, and students by various user types including Admin, School Admin, and Student. With different user types and their respective capabilities, the application offers a flexible and secure platform for educational organisations.
 User Types and Responsibilities
